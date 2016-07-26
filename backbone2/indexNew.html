@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<title>test_backbone</title>
+		<script src="jquery-1.10.2.min.js" ></script>
+		<script src="underscore.js"></script>
+		<script src="backbone.js"></script>
+		<style>
+			.conDiv{text-decoration:none;padding:10px;}
+			#div{padding:300px;}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:;" id="btnA" class="conDiv" >隐藏div </a>
+		<div id="div" >this is div </div>
+	</body>
+	<script>
+		(function(){
+			/*var view=Backbone.View.extend({
+				el:$("body"),
+				events:{
+					'click #btnA':'fnConDiv'
+				},
+				initialize:function(){
+					_.bindAll(this,"render","fnConDiv");
+					this.render();
+				},
+				render:function(){
+					$(".conDiv").html("control DIV");
+				},
+				fnConDiv:function(div){
+					$("#div").toggle();
+				}
+			});
+			var l1=new view();*/
+			var Model1=Backbone.Model.extend({
+				changeColor:function(){
+					var cssColor=prompt("please enter a css color:");
+					this.set({color:cssColor});
+				},
+				changeI:function(i){
+					this.set({i:i})
+				}
+			});
+			window.i=0;
+			window.model=new Model1();
+			model.on("change:color",function(model,color){
+				//console.log(color);
+				$("#div").css({background:color});
+			})
+			model.on("change:i",function(model,i){
+				alert(i);
+			})
+			//model.set({color:"white"});
+			model.changeColor();
+		})();
+	</script>
+</html>

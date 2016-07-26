@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>位置</title>
+
+	<style>
+		
+		*{margin:0;padding:0}
+		html,body{width:100%;height:100%;}
+		div{bottom:0px;width:100%;height:80%;}
+    </style>
+</head>
+<body>
+    <div id="kk">测试键盘</div>
+	<input id="key" type="phone" />
+</body>
+<script>
+	document.getElementById("key").addEventListener("touchend",function(e){
+
+		document.body.scrollTop=1000;
+		window.setTimeout(function(){
+			alert(document.body.offsetHeight+"/"+document.body.scrollHeight);
+			alert(document.body.scrollTop);
+
+			//alert(window.screen.availHeight);
+		},1000);
+	},false);
+
+	document.getElementById("kk").addEventListener("touchend",function(e){
+		//alert(document.body.scrollTop);
+		window.setTimeout(function(){
+			//alert(window.screen.availHeight+"/"+document.body.offsetHeight);
+			
+		},1);
+
+	},false);
+</script>
+</html>

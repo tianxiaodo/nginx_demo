@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Layer demo</title>
+    <link rel="stylesheet" href="../css/crema.css">
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+<body>
+<div class="pages">
+    <div class="page navbar-through">  
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left sliding"><a href="#" class="back link"><i class="icon icon-back-blue"></i><span>后退</span></a></div>
+            <div class="center">Layer页面</div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="page-content">
+            <div class="screen">
+                <div>
+                    <div class="content-block-title">
+                        你能够进入这个页面说明layer 工作了，你只需要简单的调用此代码
+                    </div>
+                    <div class="content-block">
+                        <div class="content-block-inner">
+                            <code>
+                                new Blend.ui.Layer({
+                                    "id" : id,
+                                    "url" : this.href,
+                                    "active" :true
+                                });
+                            </code>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block-title">
+                        当你想在下一个页面加载时候执行一些初始化方法，只需要
+                    </div>
+                    <div class="content-block">
+                        <div class="content-block-inner">
+                            <code>
+                                Blend.ui.layerInit(id,function(){//function here
+
+                                });
+                            </code>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+                  
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/api-latest.js"></script>
+<script src="../js/blend.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+</html>

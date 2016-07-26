@@ -1,0 +1,60 @@
+<html>
+	<head>
+		<title>
+			
+		</title>	
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+	</head>
+	
+	<body>
+		
+	</body>
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/lib/underscore.js"></script>
+	<script type="text/javascript" src="js/lib/backbone.js"></script>
+	<script type="text/javascript">
+		var r=Backbone.Router.extend({
+		   // Hash maps for routes
+		   routes : {
+		      "" : "",
+		      "/index" : "index",
+		      "/teams" : "getTeams",
+		      "/teams/:country" : "getTeamsCountry",
+		      "/teams/:country/:name ": "getTeam",
+		   },
+		   
+		   index: function(){
+		       // Homepage 
+		       alert("index");
+		       $("body").html("Homepage");
+		   },
+		   
+		   getTeams: function() {
+		       // List all teams 
+		       $("body").html(" List all teams");
+		   },
+		   getTeamsCountry: function(country) {
+		       // Get list of teams for specific country
+		   		$("body").html("Get list of teams for specific country");
+		   },
+		   getTeam: function(country, name) {
+		       // Get the teams for a specific country and with a specific name
+		       $("body").html("teams/country/name");
+		   },	
+		   fourOfour: function(error) {
+		       // 404 page
+		   }
+		});
+
+		var object = {};
+		(function(){
+		    var router = new r();
+		    Backbone.history.start({pushState : true});
+		    
+
+		    
+		})()
+
+	</script>
+</html>

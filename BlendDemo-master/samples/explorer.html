@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>文件上传</title>
+    <link rel="stylesheet" href="../css/crema.css">
+    <link rel="stylesheet" href="../css/app.css">     
+</head>
+<body>
+<div class="pages">
+    <div class="page navbar-through">  
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left sliding"><a href="#" class="back link"><i class="icon icon-back-blue"></i><span>后退</span></a></div>
+            <div class="center">文件上传</div>
+            <div class="right"></div>
+          </div>
+        </div>
+        <div class="page-content">
+            <div class="screen">
+                <div class="center">
+                    <button id="upload" class="button button-lg">文件上传</buttom>
+                </div>
+                <div class="mt30"></div>
+                <div id="progress" class="progress">
+                    <div id="load" class="load"></div>
+                    <div id="loadval" class="percent">0%</div>
+                </div>
+                <div class="title mt30">文件信息</div>
+                <ul class="list clearfix">
+                    <li><div class="appspan2">文件名: </div><div  class="appspan4" id="filename">无</div></li>
+                    <li><div class="appspan2">文件大小: </div><div  class="appspan4" id="filesize">0</div></li>
+                </ul>
+            </div>
+            <div class="screen none">
+                <div class="title clearfix">接口返回值</div>
+                <textarea class="full h120" name="" id="api" readonly="true">api get result here...</textarea>
+            </div>
+            <div class="next" role="button">
+                <span class="icon_down"> </span>
+            </div>                    
+        </div>
+    </div>
+</div>
+</body>
+<script src="../js/api-latest.js"></script>
+<script src="../js/blend.js"></script>
+<script type="text/javascript" src="../js/app.js"></script>
+</html>

@@ -1,0 +1,93 @@
+<html>
+	<meta>
+		<title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<script src="jquery-1.10.2.min.js"></script>
+		<script src="underscore.js"></script>
+		<script src="backbone.js"></script>
+        <style type="text/css">
+			#main{border: 1px solid #CBC7C7;position:relative;margin:0 auto; width:100%;height:100%; border-radius: 10px;padding:0px;overflow: hidden;background-color: #CBC7C7;}
+			#main #scrollDiv{position:absolute;left:0;height:00px;}
+			#main div{position:relative;width:100%;height:100%;line-height:100%;text-align: center;float:left;}
+			#div1{background: #555;}
+
+			#div2{background: #525 ;}
+			#div3{background: #6B21C8}
+			#main div a{text-decoration:none;padding:3px;color:gray;}
+
+        </style>
+	</head>
+	<body>
+        <div id="main">
+        	<div id="scrollDiv">
+	            <div id="div1">
+	            	div1
+	            	<a href="#2"> div2 </a>
+	            	<a href="#3"> div3 </a>
+	            </div>
+	            <div id="div2">
+	            	<a href="#1"> div1 </a>
+	            	div2<a href="#3"> div3 </a>
+	            </div>
+	            <div id="div3">
+	            	<a href="#1"> div1 </a>
+	            	<a href="#2"> div2 </a>
+	            	div3
+	            </div>
+            </div>
+        </div>
+	</body>
+	<script type="text/javascript">
+
+        var sdiv=document.getElementById("scrollDiv");
+			var router = Backbone.Router.extend({
+				   // Hash maps for routes
+                    initialize: function () {
+                         console.log("Route initialize");
+
+
+                         $("#scrollDiv").css("width",window.innerWidth*3+"px");
+                         $("#scrollDiv").css("height","100%");
+
+                         $("#main div div").css("width",window.innerWidth+"px");
+                         $("#main div div").css("height",window.innerHeight+"px");
+                    },
+				   routes : {
+				      "" : "index",
+				      "1" :"show1",
+				      "2" : "show2",
+				      "3" : "show3",
+                      "help" : "help"
+				   },
+				   index:function(){
+                       console.log("index");
+                       this.move(0,0);
+				   },
+				   show1:function(){
+                       console.log(1);
+                       this.move(0.8,0);
+				   },
+				   show2:function(){
+                      console.log(2);
+                       //document.getElementById("scrollDiv").style["left"]="-600px";
+                        this.move(0.8,window.innerWidth*-1);
+
+
+				   },
+				   show3:function(){
+                       this.move(0.8,window.innerWidth*-2);
+				   },
+                   move:function(time,target){
+                       sdiv.style.webkitTransition=time+"s";
+                       sdiv.style["webkitTransform"]="translate3d( "+target+"px,0px,0px)";
+                    }
+				});
+				new router();
+                Backbone.history.start();
+
+
+	</script>
+</html>
